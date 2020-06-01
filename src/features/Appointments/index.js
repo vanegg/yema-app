@@ -141,9 +141,9 @@ export default class Appointments extends Component {
           </> :
           <>
           <button id='back_button'
-                  className='u-button--primary u-button--big u-button--block'
+                  className='backButton'
                   onClick={this._goToBack}>
-            Regreso
+            Regresar
           </button>
           <Form
             errors={this.state.errors}
