@@ -14,13 +14,13 @@ Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Welcome screenshot: Ask for your email:
-![Welcome](/img/Welcome.png)
+![Welcome](/static/img/Welcome.png)
 
 If you don't have appointments, show the empty state:
-![Empty](/img/Empty.png)
+![Empty](/static/img/Empty.png)
 
 List of appointments:
-![Index](/img/Index.png)
+![Index](/static/img/Index.png)
 
 Create an appointment:
-![New](/img/New.png)
+![New](/static/img/New.png)
