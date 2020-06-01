@@ -3,11 +3,25 @@ import React, { Component } from 'react'
 class SearchEmail extends Component {
   constructor(props) {
     super(props);
-    this.input = React.createRef();
+    this.state = {
+      valid: true,
+      errorMessage: 'Formato de correo inválido'
+    }
+    this.email = React.createRef();
   }
 
   _handleSubmit = () => {
-    this.props.onChange(this.input.current.value)
+    let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (!emailRegex.test(this.email.current.value)) {
+      this.setState({
+        valid: false
+      })
+    } else {
+      this.setState({
+        valid: true
+      })
+      this.props.onChange(this.email.current.value)
+    }
   }
 
   _handleOptionChange = (e) => {
@@ -21,9 +35,11 @@ class SearchEmail extends Component {
       <div className="c-filter__container is-super-admin">
         <h4>Busca tus citas médicas con tu correo</h4>
         <div className='c-filter'>
-          <input type='text' placeholder='email'
-            onKeyPress={this._handleOptionChange} ref={this.input}
+          <input type='email' placeholder='email'
+            onKeyPress={this._handleOptionChange} ref={this.email}
           />
+          { !this.state.valid && <span className='u-error'>{this.state.errorMessage}</span> }
+          
         </div>
         <div className='u-col3'>
           <input type='submit'

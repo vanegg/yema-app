@@ -110,7 +110,7 @@ export default class Appointments extends Component {
               <button id='new_appointment_button' 
                       className='u-button--primary u-button--big u-button--block' 
                       onClick={this._goToNewAppointment}>
-                Nueva Cita
+                  Nueva Cita
               </button>
             </div>
           }
@@ -136,10 +136,6 @@ export default class Appointments extends Component {
             email={this.state.email}
           />
           </>
-
-
-
-
         }
       </>
   )}
