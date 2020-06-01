@@ -24,11 +24,12 @@ class Form extends React.Component {
     } 
   }
 
-  // componentDidMount() {
-  //   if (this.props.email) {
-  //     this.setInitOrderValues(this.props.appointment)
-  //   }
-  // }
+  componentDidMount() {
+    console.log(this.props)
+    // if (this.props.email) {
+    //   this.setInitOrderValues(this.props.appointment)
+    // }
+  }
 
   // setInitOrderValues = (appointment) => {
   //   this.setState((prevState) => {

@@ -2,10 +2,26 @@ import request from '../../api/request'
 import {
         APPOINTMENTS,
         APPOINTMENTS_BY_EMAIL,
-        PEDIATRICIANS
+        PEDIATRICIANS,
+        PEDIATRICIAN
       } from '../../api/constants'
 import { deserialise } from 'kitsu-core'
 
+
+export const _fetchPediatricians = async function () {
+  try {
+    let response = await request.get(PEDIATRICIANS, false)
+    console.log('RESPONSE')
+    console.log(response)
+    let body = await deserialise(response.body)
+    this.setState({ pediatricians: body })
+  } catch (error) {
+    console.log(error)
+    this.setState({
+      pediatricians: []
+    })
+  }
+}
 
 export const _fetchAppointments = async function () {
   try {
@@ -55,17 +71,4 @@ export const _setAppointments = async function () {
   }
 }
 
-export const _fetchPediatricians = async function (u) {
-  try {
-    let response = await request.get(PEDIATRICIANS, false)
-    let body = await deserialise(response.body)
-    this.setState({
-      pediatricians: body
-    })
-  } catch (error) {
-    console.log(error)
-    this.setState({
-      pediatricians: []
-    })
-  }
-}
+

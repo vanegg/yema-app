@@ -87,7 +87,7 @@ class Request {
       if (method === 'GET') {
         delete params.body
       }
-
+      
       let result = await this._timeout(60, fetch(url, params))
 
       return this._checkStatus(result)

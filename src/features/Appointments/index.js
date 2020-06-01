@@ -22,7 +22,6 @@ export default class Appointments extends Component {
       pediatricians: [],
       appointment: null
     }
-    this._getPediatricians()
   }
 
   componentDidMount() {
@@ -30,6 +29,7 @@ export default class Appointments extends Component {
     this._fetchAppointments = _fetchAppointments.bind(this)
     this._fetchPediatricians = _fetchPediatricians.bind(this)
     this._setAppointments = _setAppointments.bind(this)
+    
   }
 
   _getPediatricians = async () => {
@@ -50,7 +50,7 @@ export default class Appointments extends Component {
 
   _updateEmail = async (email) => {
     try {
-      await this.setState({
+      this.setState({
         loaded: false,
         email
       })
@@ -79,7 +79,8 @@ export default class Appointments extends Component {
     }
   }
 
-  _goToNewAppointment = () => {
+  _goToNewAppointment = async () => {
+    await this._getPediatricians()
     this.setState({
       new: true
     })
@@ -116,7 +117,7 @@ export default class Appointments extends Component {
           }
           { this.state.appointments.length > 0 ? 
             <Index
-            appointments={this.state.appointments}
+              appointments={this.state.appointments}
             />
             :
             <Empty
