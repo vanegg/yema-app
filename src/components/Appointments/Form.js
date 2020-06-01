@@ -14,6 +14,7 @@ class Form extends React.Component {
   }
 
   state = {
+    errors: this.props.errors,
     pediatricians: this.props.pediatricians,
     appointment: {
       email: this.props.email,
@@ -24,10 +25,16 @@ class Form extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+
+    if (prevProps !== this.props) {
+      this.setState({
+         errors: this.props.errors
+      })
+    }
+  }
 
   _setValue = (name) => (value) => {
-    console.log(name)
-    console.log(value)
     this.setState((prevState) => {
       return {
         appointment: update(prevState.appointment, { [name]: { $set: value.value } })
@@ -54,12 +61,17 @@ class Form extends React.Component {
   }
 
   _setAppointment = () => {
-    console.log(this.state)
+    this.props.onChange(this.state.appointment)
   }
 
   render () {
     return (
       <div className='c-appointment-info' id='appointmentInfo'>
+        { this.state.errors && 
+        <div className='error_messages'>
+          {this.state.errors}
+        </div>
+        }
         <span className='c-appointment-info__title'>Llena tus datos para la cita</span>
 
         <Text
@@ -85,6 +97,26 @@ class Form extends React.Component {
         />
 
         <Text
+          name='Fecha'
+          id={this.props.id}
+          required
+          type='date'
+          value={this.state.appointment.date}
+          onChange={this._setValue('date')}
+          ref={this.fields.date}
+        />
+
+        <Text
+          name='Hora'
+          id={this.props.id}
+          required
+          type='time'
+          value={this.state.appointment.time}
+          onChange={this._setValue('time')}
+          ref={this.fields.time}
+        />
+
+        <Text
           className='is-input-large'
           name='Comentarios'
           id={this.props.id}
@@ -94,8 +126,8 @@ class Form extends React.Component {
         />
 
         <button id='back_button' 
-                  className='u-button--primary u-button--big u-button--block' 
-                  onClick={this._setAppointment}>
+            className='u-button--primary u-button--big u-button--block' 
+            onClick={this._setAppointment}>
             Solicitar Cita
         </button>
       </div>

@@ -69,13 +69,25 @@ export default class Appointments extends Component {
     }
   }
 
-  _handleSubmit = () => {
-    this.props.onChange(this.input.current.value)
-  }
+  _handleSubmit = async (appointment) => {
+    try {
+      this.setState({
+        loaded: false,
+        appointment
+      }, () => {
+        this._setAppointments()
+        this._updateEmail(this.state.appointment.email)
+      })
 
-  _handleOptionChange = (e) => {
-    if (e.key === 'Enter') {
-      this._handleSubmit()
+      this.setState({
+        loaded: true
+      })
+
+    } catch (err) {
+      console.log(err)
+      this.setState({
+        loaded: true
+      })
     }
   }
 
@@ -133,8 +145,10 @@ export default class Appointments extends Component {
             Regreso
           </button>
           <Form
+            errors={this.state.errors}
             pediatricians={this.state.pediatricians}
             email={this.state.email}
+            onChange={this._handleSubmit}
           />
           </>
         }

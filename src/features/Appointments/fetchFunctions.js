@@ -5,6 +5,7 @@ import {
         PEDIATRICIANS
       } from '../../api/constants'
 import { deserialise } from 'kitsu-core'
+import moment from 'moment'
 
 
 export const _fetchPediatricians = async function () {
@@ -44,28 +45,30 @@ export const _fetchAppointmentsByEmail = async function (u) {
 }
 
 export const _setAppointments = async function () {
+
   var params = {
-    email: `${this.state.email}`,
-    date: `${this.state.date}`,
-    time: `${this.state.time}`,
-    doctor: `${this.state.doctorId}`
+    email: `${this.state.appointment.email}`,
+    date: moment(this.state.appointment.date).format('YYYY-MM-DD'),
+    time: `${this.state.appointment.time}`,
+    doctor: this.state.appointment.doctor,
+    comments: `${this.state.appointment.comments}`
+
   }
 
   try {
     let response = await request.post(APPOINTMENTS, params, false)
+    console.log('response')
+    console.log(response)
     let body = await deserialise(response.body)
-    if (body) {
-      let data = await deserialise(body.data)
-      let event = [...data.events][0]
+    console.log(body)
       this.setState({
-        useSeats: event.useSeats,
-        realCapacity: event.realCapacity,
-        seatsEventKey: event.seatsEventKey,
-        details: event.layoutDetails
+        new: false
       })
-    }
   } catch (error) {
-    console.log(error)
+    this.setState({
+      new: true,
+      errors: 'Hubo un error. Por favor revisa tus datos'
+    })
   }
 }
 
