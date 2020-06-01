@@ -1,0 +1,100 @@
+/* SOCIAL BUTTONS */
+
+.c-social {
+  @include align-content(flex-start);
+
+  @include mq-mobile {
+    border-top: 1px solid color('light','300');
+    padding-top: $base-space * 2;
+    padding-bottom: $base-space;
+    @include justify-content(center);
+  }
+}
+
+.c-social__title {
+  width: 100%;
+
+  @include mq-mobile {
+    text-align: center;
+  }
+}
+
+.c-social__button {
+  margin-right: $base-space;
+  cursor: pointer;
+
+  @include mq-mobile {
+    margin-top: $base-space;
+    margin-bottom: $base-space * 2;
+  }
+
+  svg, div {
+    @include mq-mobile {
+      width: 4.2rem!important;
+      height: 4.2rem!important;
+    }
+  }
+}
+
+.c-social__calendar {
+  @include mq-mobile {
+    width: 100%;
+    text-align: center;
+  }
+
+  @include mq-desktop {
+    margin-top: $base-space * 2;
+    flex-basis: 20rem;
+    @include align-self(flex-start);
+  }
+
+  .react-add-to-calendar__button {
+    background:url('data:image/svg+xml;utf8,<svg width="14px" height="14px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="currentColor" d="M0.9999,8 L22.9999,8 L22.9999,4 C22.9999,3.44753924 22.5521546,3 21.9999,3 L18,3 L18,5 C18,5.55228475 17.5522847,6 17,6 C16.4477153,6 16,5.55228475 16,5 L16,3 L8,3 L8,5 C8,5.55228475 7.55228475,6 7,6 C6.44771525,6 6,5.55228475 6,5 L6,3 L1.9999,3 C1.44764538,3 0.9999,3.44753924 0.9999,4 L0.9999,8 Z M22.9999,9 L0.9999,9 L0.9999,22 C0.9999,22.5518576 1.44804237,23 1.9999,23 L21.9999,23 C22.5517576,23 22.9999,22.5518576 22.9999,22 L22.9999,9 Z M8,2.00016203 L16,2.00037807 L16,1 C16,0.44771525 16.4477153,0 17,0 C17.5522847,0 18,0.44771525 18,1 L18,2.00043208 L22.0469,2.00054136 C23.1296322,2.02550783 23.9999,2.91086682 23.9999,4 L23.9999,22 C23.9999,23.1041424 23.1040424,24 21.9999,24 L1.9999,24 C0.895757625,24 -0.0001,23.1041424 -0.0001,22 L-3.73567811e-05,3.984 C0.00855899719,2.88652213 0.900799956,2 1.9999,2 L6,2.00010802 L6,1 C6,0.44771525 6.44771525,0 7,0 C7.55228475,0 8,0.44771525 8,1 L8,2.00016203 Z M-0.0001,4 C-0.0001,3.99466175 -7.90931086e-05,3.98932839 -3.73567811e-05,3.984 L0.9999,3.984 L0.9999,4 L-0.0001,4 Z M21.9999,2 C22.0156096,2 22.0312769,2.00018111 22.0469,2.00054136 L22.0469,3 L21.9999,3 L21.9999,2 Z" id="Combined-Shape"  fill-rule="nonzero"></path></svg>') no-repeat;
+    background-position-x: 1.4rem;
+    color: color('dark','300');
+    border: 1px solid;
+    border-color: inherit;
+    padding: $base-space * .5 $base-space $base-space * .5 $base-space * 2.5;
+    cursor: pointer;
+    text-align: center;
+    @include radius(3px);
+
+    @include mq-mobile {
+      font-size: mobile-type(0);
+      background-position-y: 1.1rem;
+    }
+
+    @include mq-desktop {
+      display: block;
+      font-size: mobile-type(-1);
+      background-position-y: 1rem;
+    }
+
+    &:hover {color: color('dark','400')}
+  }
+
+  .react-add-to-calendar__dropdown {
+    background: color('light','100');
+    padding: $base-space;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    @include shadow;
+
+    @include mq-mobile {
+      font-size: mobile-type(0);
+    }
+
+    @include mq-desktop {
+      font-size: mobile-type(-1);
+    }
+
+    li a {
+      display: block;
+      padding-top: $base-space * .5;
+      padding-bottom: $base-space * .5;
+
+      &:first-child {padding-top: 0;}
+    }
+  }
+}

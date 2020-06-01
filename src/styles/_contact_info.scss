@@ -1,0 +1,45 @@
+/* CONTACT INFO */
+
+.c-contact {
+  padding-top: $base-space * 2;
+  padding-bottom: $base-space * 2;
+}
+
+.c-contact__title {
+  @include section-title;
+}
+
+.c-contact__list{
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+}
+
+.c-contact__single {
+  width: 50%;
+  line-height: $base-space * 2;
+  margin-bottom: $base-space;
+  margin-top: $base-space;
+
+  a {@include flexbox();}
+
+  div {margin-right: $base-space * .5;}
+}
+
+.c-contact__icon-holder {
+  width: $base-space * 2;
+  height: $base-space * 2;
+  border-radius: $base-space;
+  background: color('blue');
+  
+  text-align: center;
+  @include radius(50%);
+
+  .c-icon {
+    margin-right: auto;
+    margin-left: auto;
+    left: 1px;
+
+    path {color: color('light','100');}
+  }
+}

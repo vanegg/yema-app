@@ -1,0 +1,117 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@mixin content-divider {
+  padding: $base-space * 2 $base-space;
+}
+
+@mixin section-title {
+  display: block;
+  font-weight: 300;
+  margin-bottom: $base-space;
+  color: color('dark','200');
+  @include type(3);
+
+  .c-icon {
+    vertical-align: text-top;
+    margin-right: 0;
+  }
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin gradient($direction, $color-stops...) {
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+ul {margin: 0;padding: 0;}
+
+li {list-style-type: none}
+
+body {background: color('light','200');}
+
+// HIDE ON DESKTOP
+.u-only-mobile {
+  @include mq-desktop {display: none;};
+  @include mq-mobile-landscape {display: block;}
+}
+
+// HIDE ON MOBILE
+.u-only-desktop {
+  @include mq-mobile {display: none;};
+  @include mq-mobile-landscape {display: none;};
+}
+
+//HIDE ALL / js
+.u-hide {display: none;}
+
+
+//BUTTONS FLEX WRAPPER
+.c-buttons__wrapper {
+  margin-top: $base-space * 2;
+  margin-bottom: $base-space * 2;
+
+  @include flexbox();
+  @include flex-wrap(wrap);
+  @include justify-content(space-around);
+
+  a, button, input[type=submit] {
+    margin-top: $base-space * 2;
+    &:first-child {margin-top: 0;}
+  }
+
+
+  @include mq-desktop {
+    a, button, input[type=submit] {
+      min-width: 30rem;
+      text-align: center;
+    }
+
+    @include flex-direction(row-reverse);
+    @include justify-content(center);
+  }
+}
+
+.c-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: $base-space * .5;
+
+
+  &.is-timer path, &.is-timer circle {
+    fill: color('yellow','500');
+  }
+
+  &.is-loading {height: auto;}
+}
+
+button span {vertical-align: middle;}
+
+// GLOBAL HELP TEXT
+.c-help-text {
+  margin: $base-space 0;
+  @include flexbox();
+  @include flex-direction(row);
+  @include justify-content(flex-start);
+  @include flex-wrap(nowrap);
+
+  .c-icon {
+    height: auto;
+    color: color('violet','300');
+    margin-top: .5rem;
+    @include align-self(flex-start);
+    @include flex-shrink(0);
+  }
+
+  p, i {
+    margin-top: 0;
+    @include flex-basis(1);
+  }
+}

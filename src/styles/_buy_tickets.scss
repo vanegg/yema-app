@@ -1,0 +1,138 @@
+/* BUY TICKETS */
+.c-buy-tickets__wrapper {
+  background: color('light','100');
+  border-top: 1px solid color('light','300');
+  border-bottom: 1px solid color('light','300');
+}
+
+.c-buy-tickets {
+  max-width: 102rem;
+  width: 100%;
+  margin: auto;
+
+  @include mq-mobile {
+    padding: $base-space * 2 $base-space;
+  }
+
+  @include mq-desktop {
+    padding: $base-space * 2;
+    @include flexbox;
+    @include align-items(center);
+  }
+
+  .u-button--primary {
+    @include mq-desktop {
+      max-width: 30rem;
+    }
+  }
+}
+
+.c-buy-tickets__label {
+  @include mq-desktop {
+    padding-right: $base-space * 2;
+    @include type(1);
+    @include flex-grow(1);
+  }
+}
+
+.c-buy-tickets__qty {
+  display: block;
+  font-weight: bold;
+  color: color('violet');
+  @include type(2);
+
+  @include mq-mobile {
+    margin-bottom: $base-space;
+  }
+
+  small {
+    color: color('dark','200');
+    text-transform: uppercase;
+    font-weight: normal;
+
+    @include mq-mobile {font-size: desktop-type(-1);}
+    @include mq-desktop {font-size: desktop-type(0);}
+  }
+}
+
+
+/* STICKY HEADER */
+
+.c-sticky-buy__block {
+  @include mq-mobile {
+    display: none;
+  }
+
+  @include mq-desktop {
+    height: 0;
+    opacity: 0;
+    z-index: 1;
+    @include animate;
+  }
+
+  &.is-sticky {
+    opacity: 1;
+  }
+}
+
+.c-sticky-buy__wrapper {
+  background: color('light','100');
+  width: 100%;
+  @include shadow;
+}
+
+.c-sticky-buy {
+  background: color('light','100');
+  max-width: 102rem;
+  width: 100%;
+  margin: auto;
+  padding: $base-space $base-space * 2;
+  @include flexbox;
+  @include flex-direction(row);
+}
+
+.c-sticky-buy__logo {
+  width: 4.2rem;
+  height: 4.2rem;
+  background: color('light','100');
+  border: 2px solid color('violet');
+  overflow: hidden;
+  margin-right: $base-space;
+  @include radius(50%);
+  @include flexbox;
+
+  img {
+    width: 100%;
+    @include align-self(center);
+  }
+}
+
+.c-sticky-buy__content {
+  padding-right: $base-space * 2;
+  min-width: 0;
+  @include flex-grow(1);
+  @include flex-basis(0);
+}
+
+.c-sticky-buy__event {
+  color: color('dark','200');
+  display: block;
+  text-transform: uppercase;
+  @include type(-1);
+  @include ellipsis;
+}
+
+.c-sticky-buy__label {
+  @include type(1);
+
+  small {
+    color: color('dark','200');
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+}
+
+.c-sticky-buy__button {
+  width: 30rem;
+  @include flex-shrink(0);
+}

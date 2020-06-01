@@ -1,0 +1,83 @@
+/* COUPON */
+
+.c-coupon {
+  padding: $base-space * 2;
+  border: 1px solid color('light','300');
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include radius(3px);
+
+  &.is-success {
+    color: color('green','400');
+    border-color: color('green');
+    text-align: center;
+  }
+
+  p, span {width: 100%;}
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: $base-space;
+
+    @include mq-desktop {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  .c-coupon__input-wrapper {
+    width: 100%;
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+
+    input[type="text"] {
+      @include mq-desktop {
+        margin-right: $base-space * 1.5;
+        @include flex-basis(0);
+        @include flex-grow(1);
+        @include order(1);
+      }
+
+      @include mq-tablet {margin-bottom: $base-space;}
+    }
+
+    input[type="submit"] {
+      margin-top: $base-space;
+
+      @include mq-desktop {
+        width: 15rem;
+        margin-top: 0;
+        @include order(2);
+        @include flex-shrink(0);
+      }
+
+      @include mq-tablet {
+        margin-bottom: $base-space;
+      }
+    }
+  }
+
+  .u-error {
+    width: 100%;
+
+    @include mq-desktop {
+      margin-top: $base-space;
+      @include order(3);
+    }
+
+    @include mq-tablet {margin-top: 0;}
+  }
+}
+
+.c-coupon__error-link {
+  color: color('red','300');
+  text-decoration: underline;
+}
+
+.c-coupon__title {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}

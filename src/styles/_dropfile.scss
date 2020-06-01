@@ -1,0 +1,26 @@
+/* DROP FILE */
+
+.c-dropfile {
+  color: color('dark','300');
+  border-width: 1px;
+  border-style: dashed;
+  padding: $base-space;
+  margin-top: $base-space * .5;
+  cursor: pointer;
+  @include radius(3px);
+
+  &.is-default {
+    border-color: color('dark');
+    background: color('light','200');
+
+    &:hover {
+      background: color('light','300');
+    }
+  }
+
+  &.is-loading {
+    color: color('blue','400');
+    background: color('blue','100');
+    border-color: color('blue');
+  }
+}

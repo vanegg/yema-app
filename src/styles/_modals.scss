@@ -1,0 +1,58 @@
+.o-modal {
+  @include mq-mobile {padding: $base-space * 2;}
+
+  @include mq-desktop {
+    max-width: 50rem;
+    padding: $base-space * 3;
+  }
+
+  &.is-login {
+    @include mq-mobile {
+      width: 100%;
+      padding: $base-space * 2;
+    }
+
+    @include mq-mobile-landscape {width: 90%;}
+  }
+
+  .c-icon.is-loading {
+    margin: 0 0 $base-space * 2;
+    color: color('dark');
+  }
+
+  &.is-timeout {
+    @include mq-desktop {padding: $base-space * 4;}
+
+    p {margin-top: 0;}
+  }
+
+  form {margin-top: $base-space * 2;}
+
+  .u-field:nth-child(2) {margin-bottom: $base-space * .5;}
+}
+
+.o-modal__title {margin-bottom: 0;}
+
+.o-modal__image {
+  width: 15.4rem;
+  height: auto;
+  margin: 0 auto $base-space * 2;
+
+  img {width: 100%;}
+}
+
+.o-modal__close {
+  cursor: pointer;
+
+  @include mq-desktop {
+    top: -14px;
+    right: -14px;
+  }
+
+  @include mq-mobile {
+    top: 0;
+    right: 0;
+  }
+}
+
+.o-modal__button {margin-top: $base-space * 2;}

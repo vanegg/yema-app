@@ -1,0 +1,57 @@
+.c-finish-instructions {
+  margin-bottom: $base-space * 3;
+
+  p, a {margin: 0 0 $base-space * 1.5;}
+}
+
+.u-one-column {
+  width: 100%;
+  max-width: 66.4rem;
+  margin-left: 0;
+}
+
+.c-finish-instructions__deposit {
+  padding: $base-space;
+  border: 1px solid color('light','500');
+  margin-top: $base-space * 2;
+  margin-bottom: $base-space * 3;
+
+  h4 {
+    padding-bottom: $base-space;
+    border-bottom: 1px solid color('light','500');
+  }
+
+  li:nth-child(2n+2) {
+    margin-bottom: $base-space;
+    padding-bottom: $base-space;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  @include mq-desktop {
+    padding: $base-space * 2;
+  }
+}
+
+.c-finish-instructions__oxxo {
+  margin-bottom: $base-space * 3;
+
+  .c-download-instructions__oxxo-code {
+    width: fit-content;
+    margin: 0 auto;
+    padding: $base-space * 1.5;
+    text-align: center;
+    font-size: desktop-type(3);
+    border: 1px solid color('light','500');
+    margin-bottom: $base-space * 2;
+    margin-top: $base-space * 2;
+    letter-spacing: .2rem;
+  }
+
+  .c-download-instructions__oxxo-map {
+    img {width: 100%}
+  }
+}

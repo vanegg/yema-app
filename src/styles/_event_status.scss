@@ -1,0 +1,16 @@
+.c-event-status__wrapper {
+  width: 100%;
+  padding-top: $base-space * 3;
+}
+
+.c-event-status {
+  padding: $base-space * 2;
+  margin-bottom: $base-space;
+  text-align: center;
+  @include radius(3px);
+}
+
+.c-event-status__image {
+  display: block;
+  margin: 0 auto $base-space * 2;
+}

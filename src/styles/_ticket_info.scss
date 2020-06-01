@@ -1,0 +1,41 @@
+/* TICKET INFO */
+
+.c-ticket-info {
+  border: 1px solid color('light','300');
+  padding: $base-space * 2 $base-space;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+
+  @include mq-mobile {
+    margin-bottom: $base-space;
+  }
+  
+  @include mq-desktop {
+    margin-bottom: $base-space * 2;
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
+
+  .u-field:last-child {margin-bottom: 0}
+}
+
+.c-ticket-info__title {
+  border-top: 1px solid color('light','300');
+  border-right: 1px solid color('light','300');
+  border-left: 1px solid color('light','300');
+  padding: $base-space;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-topleft: 3px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+
+  h4 {margin-bottom: 0;}
+
+}
