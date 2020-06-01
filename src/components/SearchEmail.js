@@ -32,16 +32,17 @@ class SearchEmail extends Component {
 
   render () {
     return (
-      <div className="c-filter__container is-super-admin">
-        <h4>Busca tus citas médicas con tu correo</h4>
-        <div className='c-filter'>
+      <div className="searchBox">
+        <img src='https://i.pinimg.com/originals/4f/6d/6e/4f6d6e79d1fd0a87f87f96c7e1ee6061.png' width='120'></img>
+        <h1>Hola</h1>
+        <h2>Busca tus citas médicas con tu correo</h2>
+        <div className='filter'>
           <input type='email' placeholder='email'
             onKeyPress={this._handleOptionChange} ref={this.email}
           />
           { !this.state.valid && <span className='u-error'>{this.state.errorMessage}</span> }
-          
         </div>
-        <div className='u-col3'>
+        <div>
           <input type='submit'
             value='Buscar'
             className='u-button--base u-button--secondary u-button--block'

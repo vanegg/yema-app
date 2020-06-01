@@ -1,30 +1,105 @@
-// COMPONENTS
-// @import '../src/styles/_base.scss';
-// @import '../src/styles/_icons.scss';
-// @import '../src/styles/_layouts.scss';
-// @import '../src/styles/_seats.scss';
-// @import '../src/styles/_event_info.scss';
-// @import '../src/styles/_ticket_types.scss';
-// @import '../src/styles/_buy_tickets.scss';
-// @import '../src/styles/_about.scss';
-// @import '../src/styles/_place.scss';
-// @import '../src/styles/_sponsors.scss';
-// @import '../src/styles/_contact_info.scss';
-// @import '../src/styles/_order_sumary.scss';
-// @import '../src/styles/_coupon.scss';
-// @import '../src/styles/_steps.scss';
-// @import '../src/styles/_login.scss';
-// @import '../src/styles/_order_info.scss';
-// @import '../src/styles/_ticket_info.scss';
-// @import '../src/styles/_payment_methods.scss';
-// @import '../src/styles/_monthly_payments.scss';
-// @import '../src/styles/_checkout_buttons.scss';
-// @import '../src/styles/_social_buttons.scss';
-// @import '../src/styles/_modals.scss';
-// @import '../src/styles/_finish_info';
-// @import '../src/styles/_finish_instructions';
-// @import '../src/styles/_subscribe';
-// @import '../src/styles/_event_status';
-// @import '../src/styles/_dropfile';
-// @import '../src/styles/_header';
-// @import '../src/styles/_footer';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5 , h6 {
+  margin: 0 0 14px 0;
+
+  &.notBold {font-weight: normal;}
+}
+
+p {
+  margin:0 0 7px 0;
+  font-size: 18px;
+}
+
+input[type=email] {
+  width: 280px;
+  height: 28px;
+  border-radius: 2px;
+  border: 1px solid gray;
+  margin-bottom: 3.5px;
+  padding: 1px 10px;
+}
+
+input[type=submit] {
+  width: 150px;
+  background-color: #2e35fa;
+  border: 1px solid #050cd6;
+  border-radius: 5px;
+  color: white;
+  padding: 7px;
+  cursor: pointer;
+}
+
+#root {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 28px;
+}
+
+.u-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+
+  span {
+    color: red;
+    font-size: 12px;
+  }
+}
+
+.newAppointment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 28px 0;
+
+  p {margin: 0 14px 0 0;}
+}
+
+.newAppointmentButton {
+  width: 150px;
+  background-color: #2e35fa;
+  border: 1px solid #050cd6;
+  border-radius: 5px;
+  color: white;
+  padding: 7px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ResultsContainer {
+  padding: 28px 0;
+}
+
+.AppointmentSingle {margin-bottom: 42px;}
+
+.AppointmentContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

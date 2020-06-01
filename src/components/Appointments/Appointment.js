@@ -12,23 +12,23 @@ class Appointment extends React.Component {
 
   render () {
     return (
-      <div className='c-appointment__single'>
-        <div className='c-appointment__content'>
-          <h4 className='c-appointment__name'>
-            Email:{this.state.email}
-          </h4>
-          <h4> 
-            Doctor: {this.state.doctor} 
-            </h4>
-          <h4  className=''>
-            Status de la cita:{this.state.status}
-          </h4>
-         <h4 className=''>
-            Fecha y hora: {this.state.date} - {this.state.time}
-          </h4>
-          <h4 className=''>
-            Comentarios: {this.state.comments}
-          </h4>
+      <div className='AppointmentSingle'>
+        <div className='AppointmentContent'>
+          <h3 className='AppointmentName'>
+          Email: {this.state.email}
+          </h3>
+          <p>
+          Doctor: {this.state.doctor}
+          </p>
+          <p>
+          Status de la cita: {this.state.status}
+          </p>
+          <p>
+          Fecha y hora: {this.state.date} - {this.state.time}
+          </p>
+          <p>
+          Comentarios: {this.state.comments}
+          </p>
         </div>
       </div>
     )

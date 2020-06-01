@@ -29,7 +29,7 @@ export default class Appointments extends Component {
     this._fetchAppointments = _fetchAppointments.bind(this)
     this._fetchPediatricians = _fetchPediatricians.bind(this)
     this._setAppointments = _setAppointments.bind(this)
-    
+
   }
 
   _getPediatricians = async () => {
@@ -55,7 +55,7 @@ export default class Appointments extends Component {
         email
       })
       await this._fetchAppointmentsByEmail(email)
-      
+
       this.setState({
         loaded: true
       })
@@ -112,22 +112,23 @@ export default class Appointments extends Component {
         {!this.state.email ?
           <SearchEmail
             email={this.state.email}
-            onChange={this._updateEmail} 
+            onChange={this._updateEmail}
           />
           :
           !this.state.new ?
           <>
-          <p>Hola {this.state.email},  Estas son tus citas actuales</p>
+          <h2 className='notBold'>Estas son tus citas actuales para <strong>{this.state.email}</strong></h2>
           {
             <div className="newAppointment">
-              <button id='new_appointment_button' 
-                      className='u-button--primary u-button--big u-button--block' 
+              <p>¿Necesitas una nueva cita?</p>
+              <button id='new_appointment_button'
+                      className='newAppointmentButton'
                       onClick={this._goToNewAppointment}>
-                  Nueva Cita
+                  + Nueva Cita
               </button>
             </div>
           }
-          { this.state.appointments.length > 0 ? 
+          { this.state.appointments.length > 0 ?
             <Index
               appointments={this.state.appointments}
             />
@@ -139,8 +140,8 @@ export default class Appointments extends Component {
           }
           </> :
           <>
-          <button id='back_button' 
-                  className='u-button--primary u-button--big u-button--block' 
+          <button id='back_button'
+                  className='u-button--primary u-button--big u-button--block'
                   onClick={this._goToBack}>
             Regreso
           </button>
@@ -157,7 +158,7 @@ export default class Appointments extends Component {
 
   render () {
     return (
-      <div className="u-wrapper100 o-layout is-global-stats">
+      <div className="u-wrapper">
         <div className="myAppointments">
           {this._renderAppointments()}
         </div>
