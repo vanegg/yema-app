@@ -59,10 +59,10 @@ export default class List extends React.Component {
                   type='radio'
                   id={`${this.props.id}_${o.pk}`}
                   name={`options-${this.props.id}`}
-                  onChange={this._handleChange(o.user.username)}
+                  onChange={this._handleChange(o.pk)}
                 />
                 <label htmlFor={`${this.props.id}_${o.pk}_${slug(o.user.username)}`} >
-                  {o.user.username}
+                  Dr. {o.user.first_name} {o.user.last_name}
                 </label>
               </li>
             ))

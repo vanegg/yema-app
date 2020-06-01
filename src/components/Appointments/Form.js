@@ -25,45 +25,25 @@ class Form extends React.Component {
   }
 
 
-  componentDidMount() {
-    console.log(this.props)
-    // if (this.props.email) {
-    //   this.setInitOrderValues(this.props.appointment)
-    // }
-  }
-
-  // setInitOrderValues = (appointment) => {
-  //   this.setState((prevState) => {
-  //     return {
-  //       appointment: {
-  //         ...prevState.appointment,
-  //         email: { value: appointment.email || '', valid: true },
-  //       }
-  //     }
-  //   })
-  // }
-
   _setValue = (name) => (value) => {
+    console.log(name)
+    console.log(value)
     this.setState((prevState) => {
       return {
-        appointment: update(prevState.appointment, { [name]: { $set: value } })
+        appointment: update(prevState.appointment, { [name]: { $set: value.value } })
       }
     }, () => {
-      this.validate(true)
+      this.validate()
     })
   }
 
-  validate = (notify = false) => {
+  validate = () => {
     let valid = true
 
     Object.keys(this.fields).some(r => {
       valid = this.state.appointment[r].valid
       return !valid
     })
-
-    if (!notify) {
-      this.validateAll()
-    }
     return valid
   }
 
@@ -71,6 +51,10 @@ class Form extends React.Component {
     Object.keys(this.fields).forEach(k => {
       this.required[k].current._showError()
     })
+  }
+
+  _setAppointment = () => {
+    console.log(this.state)
   }
 
   render () {
@@ -105,7 +89,7 @@ class Form extends React.Component {
           name='Comentarios'
           id={this.props.id}
           value={this.state.appointment.comments}
-          onChange={this._setValue('appointmentComments')}
+          onChange={this._setValue('comments')}
           ref={this.fields.comments}
         />
 
