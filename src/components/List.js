@@ -54,15 +54,15 @@ export default class List extends React.Component {
         <ul>
           {
             this.props.options.map((o, idx) => (
-              <li key={idx}>
+              <li key={o.pk}>
                 <input
                   type='radio'
-                  id={`${this.props.id}_${idx}_${slug(o.option_value || o.value)}`}
+                  id={`${this.props.id}_${o.pk}`}
                   name={`options-${this.props.id}`}
-                  onChange={this._handleChange(o.option_value || o.value)}
+                  onChange={this._handleChange(o.user.username)}
                 />
-                <label htmlFor={`${this.props.id}_${idx}_${slug(o.option_value || o.value)}`} >
-                  {o.option_value || o.value}
+                <label htmlFor={`${this.props.id}_${o.pk}_${slug(o.user.username)}`} >
+                  {o.user.username}
                 </label>
               </li>
             ))

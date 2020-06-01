@@ -21,8 +21,9 @@ class Form extends React.Component {
       time: null,
       doctor: null,
       comments: null
-    } 
+    }
   }
+
 
   componentDidMount() {
     console.log(this.props)
