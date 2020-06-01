@@ -67,12 +67,12 @@ class Form extends React.Component {
   render () {
     return (
       <div className='c-appointment-info' id='appointmentInfo'>
-        { this.state.errors && 
+        { this.state.errors &&
         <div className='error_messages'>
           {this.state.errors}
         </div>
         }
-        <span className='c-appointment-info__title'>Llena tus datos para la cita</span>
+        <h2>Llena tus datos para la cita</h2>
 
         <Text
           name='E-mail'
@@ -125,8 +125,8 @@ class Form extends React.Component {
           ref={this.fields.comments}
         />
 
-        <button id='back_button' 
-            className='u-button--primary u-button--big u-button--block' 
+        <button id='back_button'
+            className='finalButton'
             onClick={this._setAppointment}>
             Solicitar Cita
         </button>

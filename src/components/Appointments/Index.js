@@ -11,7 +11,7 @@ class Index extends Component {
 
   render () {
     return (
-      <div className="c-filter__container is-super-admin">
+      <div className = "ResultsContainer">
         {
           this.state.appointments.map((e, i) =>
             <Appointment key={i} {...e} />

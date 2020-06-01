@@ -42,7 +42,7 @@ class SearchEmail extends Component {
           />
           { !this.state.valid && <span className='u-error'>{this.state.errorMessage}</span> }
         </div>
-        <div>
+        <div className='u-col3'>
           <input type='submit'
             value='Buscar'
             className='u-button--base u-button--secondary u-button--block'

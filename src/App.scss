@@ -25,6 +25,37 @@ input[type=email] {
   border: 1px solid gray;
   margin-bottom: 3.5px;
   padding: 1px 10px;
+  margin-left: 7px;
+}
+
+input[type=date] {
+  width: 150px;
+  height: 28px;
+  border-radius: 2px;
+  border: 1px solid gray;
+  margin-bottom: 3.5px;
+  padding: 1px 10px;
+  margin-left: 7px;
+}
+
+input[type=text] {
+  width: 300px;
+  min-height: 28px;
+  border-radius: 2px;
+  border: 1px solid gray;
+  margin-bottom: 3.5px;
+  padding: 1px 10px;
+  margin-left: 7px;
+}
+
+input[type=time] {
+  width: 150px;
+  height: 28px;
+  border-radius: 2px;
+  border: 1px solid gray;
+  margin-bottom: 3.5px;
+  padding: 1px 10px;
+  margin-left: 7px;
 }
 
 input[type=submit] {
@@ -80,7 +111,7 @@ input[type=submit] {
   p {margin: 0 14px 0 0;}
 }
 
-.newAppointmentButton {
+.newAppointmentButton, .finalButton {
   width: 150px;
   background-color: #2e35fa;
   border: 1px solid #050cd6;
@@ -102,4 +133,31 @@ input[type=submit] {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.error_messages {
+  font-size: 14px;
+  background-color: #ff6161;
+  color: white;
+  border: 1px solid red;
+  padding: 7px 14px;
+  border-radius: 5px;
+  margin: 14px 0;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  text-decoration: underline;
+  margin-bottom: 28px;
+  cursor: pointer;
+
+  &:before {
+    content: "←";
+  }
+}
+
+.u-field, .u-radio {
+  margin-bottom: 28px;
 }
